@@ -1,0 +1,15 @@
+#
+# yojimbo
+#
+---
+imports:
+    fips-mbedtls: 
+        git: https://github.com/kochol/fips-mbedtls.git
+    fips-libsodium:
+        git: https://github.com/kochol/fips-libsodium.git
+        
+exports:
+    header-dirs :
+        - .
+    modules :
+        yojimbo   :          .
