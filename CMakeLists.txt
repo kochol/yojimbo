@@ -29,11 +29,12 @@ fips_begin_lib(yojimbo)
     fips_deps(mbedtls sodium)
 fips_end_lib(yojimbo)
 
-fips_begin_app(test cmdline)
-    fips_files(test.cpp)
-    fips_deps(yojimbo)
-fips_end_app(test)
-
 if (NOT FIPS_IMPORT)
-fips_finish()
+    fips_begin_app(test cmdline)
+        fips_files(test.cpp)
+        fips_deps(yojimbo)
+    fips_end_app(test)
+
+    fips_finish()
+    
 endif()
